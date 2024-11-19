@@ -1,0 +1,25 @@
+#hero .container h2
+{
+    font-size: 50px;
+
+}
+
+.skill-title
+{
+    background-color: #040B14;
+    opacity: 0.9;
+    color: white;
+    text-align: center;
+   margin-bottom: 25px;
+}
+.skill-title h4
+{ padding: 8px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.job_title
+{
+    color:#36ABE2;
+}
