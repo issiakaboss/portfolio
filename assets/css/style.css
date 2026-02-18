@@ -23,3 +23,11 @@
 {
     color:#36ABE2;
 }
+
+.portfolio-img-fix {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: contain !important; /* Garde l'image entière */
+    background: #fdfdfd; /* Fond neutre si l'image est fine */
+    padding: 15px;
+}
