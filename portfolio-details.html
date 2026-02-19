@@ -19,27 +19,50 @@
     padding-top: 40px;
   }
 
-  /* Force l'image à rester dans sa colonne sans être géante */
+  /* Conteneur du slider pour donner plus de hauteur */
+  .portfolio-details-slider {
+    padding: 20px;
+    background: #f4f4f4; /* Petit fond gris pour faire ressortir l'image */
+    border-radius: 10px;
+  }
+
+  /* Force l'image à être plus grande */
   #image-container img {
-    max-width: 100%;
-    max-height: 60vh; /* L'image ne dépassera pas 60% de la hauteur de l'écran */
     width: auto;
     height: auto;
+    max-width: 100%;
+    /* On passe de 60vh à 85vh pour que l'image soit bien plus grande */
+    max-height: 85vh; 
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    border-radius: 8px;
+    border-radius: 5px;
+    /* Ombre pour donner du relief */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
   }
 
-  /* Ajustement de la boîte d'informations à droite */
+  /* Ajustement pour les écrans mobiles */
+  @media (max-width: 768px) {
+    #image-container img {
+      max-height: 70vh;
+    }
+  }
+
+  /* Boîte d'informations à droite */
   .portfolio-info {
     padding: 30px;
     box-shadow: 0px 0 30px rgba(0, 0, 0, 0.08);
     background: #fff;
+    border-top: 3px solid #0563bb; /* Rappel de ta couleur d'accentuation */
   }
 
   .portfolio-description {
     padding-top: 20px;
+  }
+  #video-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
   }
 </style>
 </head>
@@ -62,65 +85,103 @@
     <a href="https://www.linkedin.com/in/issiaka-ouedraogo-1a6872306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
   </div>
 
-  <nav id="navmenu" class="navmenu">
-    <ul>
-      <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-      <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-      <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-      <li><a href="index.html#portfolio" class="active"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-      <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-      <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-    </ul>
-  </nav>
+   <nav id="navmenu" class="navmenu">
+  <ul>
+    <li>
+      <a href="index.html#hero" class="active">
+        <i class="bi bi-house navicon"></i> 
+        <span data-key="nav_home">Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="index.html#about">
+        <i class="bi bi-person navicon"></i> 
+        <span data-key="nav_about">About</span>
+      </a>
+    </li>
+    <li>
+      <a href="index.html#resume">
+        <i class="bi bi-file-earmark-text navicon"></i> 
+        <span data-key="nav_resume">Resume</span>
+      </a>
+    </li>
+    <li>
+      <a href="index.html#portfolio">
+        <i class="bi bi-images navicon"></i> 
+        <span data-key="nav_portfolio">Portfolio</span>
+      </a>
+    </li>
+    <li>
+      <a href="index.html#services">
+        <i class="bi bi-hdd-stack navicon"></i> 
+        <span data-key="nav_services">Services</span>
+      </a>
+    </li>
+    <li>
+      <a href="index.html#contact">
+        <i class="bi bi-envelope navicon"></i> 
+        <span data-key="nav_contact">Contact</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+    <div class="lang-menu text-center mb-3">
+      <button onclick="changeLanguage('fr')" class="btn btn-sm btn-outline-light">FR</button>
+      <button onclick="changeLanguage('en')" class="btn btn-sm btn-outline-light">EN</button>
+    </div>
 </header>
 
-  <main class="main">
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 id="p-title">Détails</h1>
-        <nav class="breadcrumbs">
-          <ol><li><a href="index.html#portfolio">Accueil</a></li><li class="current">Détails</li></ol>
-        </nav>
-      </div>
+<main class="main">
+  <div class="page-title dark-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 id="p-title" data-key="det_title">Détails</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html#portfolio" data-key="det_nav_home">Accueil</a></li>
+          <li class="current" data-key="det_nav_curr">Détails</li>
+        </ol>
+      </nav>
     </div>
+  </div>
 
-    <section id="portfolio-details" class="portfolio-details section">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-              <div class="swiper-wrapper align-items-center" id="image-container"></div>
-              <div class="swiper-pagination"></div>
-            </div>
+  <section id="portfolio-details" class="portfolio-details section">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper init-swiper">
+            <div class="swiper-wrapper align-items-center" id="image-container"></div>
+            <div class="swiper-pagination"></div>
           </div>
-        
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Informations</h3>
-              <ul>
-                <li><strong>Projet</strong>: <span id="info-name"></span></li>
-                <li><strong>Contexte</strong>: <span id="info-context"></span></li>
-                <li><strong>Catégorie</strong>: <span id="info-cat"></span></li>
-                <li><strong>Lien</strong>: <a href="#" id="info-url" target="_blank">Consulter</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2 id="desc-title">Description</h2>
-              <p id="desc-text"></p>
-            </div>
-            <div class="portfolio-video mt-4">
-            <h3>Démonstration Vidéo</h3>
-            <div id="video-container" class="ratio ratio-16x9">
-              </div>
+        </div>
+      
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3 data-key="det_info_title">Informations</h3>
+            <ul>
+              <li><strong data-key="det_info_proj">Projet</strong>: <span id="info-name"></span></li>
+              <li><strong data-key="det_info_ctx">Contexte</strong>: <span id="info-context"></span></li>
+              <li><strong data-key="det_info_cat">Catégorie</strong>: <span id="info-cat"></span></li>
+              <li><strong data-key="det_info_link">Lien</strong>: <a href="#" id="info-url" target="_blank" data-key="det_info_btn">Consulter</a></li>
+            </ul>
           </div>
+          <div class="portfolio-description">
+            <h2 id="desc-title" data-key="det_desc_title">Description</h2>
+            <p id="desc-text"></p>
+          </div>
+          <div class="portfolio-video mt-4">
+            <h3 data-key="det_demo_title">Démonstration Vidéo</h3>
+            <div id="video-container" class="ratio ratio-16x9"></div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  
+  <script src="assets/js/translations.js"></script>
   <script src="assets/js/main.js"></script>
 
 <script>
@@ -128,52 +189,94 @@
     const projects = {
       tiim: {
         name: "Tiim",
-        context: "Projet Indépendant (Startup)",
-        cat: "Application Mobile",
         url: "https://fasotiim.com",
-        desc: "Application innovante de vérification de disponibilité des produits en pharmacie en temps réel. Actuellement à 80% du développement.",
         imgs: ["assets/img/portfolio/tiim.webp", "assets/img/portfolio/tiim2.webp", "assets/img/portfolio/tiim3.webp", "assets/img/portfolio/tiim4.webp", "assets/img/portfolio/tiim5.webp", "assets/img/portfolio/tiim6.webp"],
         video: "assets/vids/tiim_demo.mp4",
+        fr: {
+          context: "Projet Indépendant (Startup)",
+          cat: "Application Mobile",
+          desc: "Application innovante de vérification de disponibilité des produits en pharmacie en temps réel. Actuellement à 80% du développement."
+        },
+        en: {
+          context: "Independent Project (Startup)",
+          cat: "Mobile App",
+          desc: "Innovative application for real-time checking of product availability in pharmacies. Currently at 80% development."
+        }
       },
       halal: {
         name: "Union Halal",
-        context: "Projet Client Indépendant",
-        cat: "Application Mobile",
         url: "#",
-        desc: "Application mobile dédiée à la communauté Union Halal pour la gestion des services et la communication.",
-        imgs: ["assets/img/portfolio/union-halal.webp", "assets/img/portfolio/union-halal2.webp", "assets/img/portfolio/union-halal3.webp", "assets/img/portfolio/union-halal4.webp", "assets/img/portfolio/union-halal5.webp", "assets/img/portfolio/union-halal6.webp"]
+        imgs: ["assets/img/portfolio/union-halal.webp", "assets/img/portfolio/union-halal2.webp", "assets/img/portfolio/union-halal3.webp", "assets/img/portfolio/union-halal4.webp", "assets/img/portfolio/union-halal5.webp", "assets/img/portfolio/union-halal6.webp"],
+        fr: {
+          context: "Projet Client Indépendant",
+          cat: "Application Mobile",
+          desc: "Application mobile dédiée à la communauté musulmane pour la recherche de son conjoint selon les criteres afin d'aboutir au mariage."
+        },
+        en: {
+          context: "Independent Client Project",
+          cat: "Mobile App",
+          desc: "Mobile application dedicated to the Muslim community for finding a spouse based on specific criteria to facilitate marriage."
+        }
       },
       grh: {
         name: "G-RH",
-        context: "Collaborateur chez YTech Company",
-        cat: "Logiciel de Gestion",
         url: "https://share.google/9aLGs4DqBOk3RS2Oy",
-        desc: "Logiciel complet de gestion des ressources humaines, incluant le suivi du personnel, des présences et des performances.",
-        imgs: ["assets/img/portfolio/g-rh.webp"]
+        imgs: ["assets/img/portfolio/g-rh.webp"],
+        fr: {
+          context: "Collaborateur chez YTech Company",
+          cat: "Logiciel de Gestion",
+          desc: "Logiciel complet de gestion des ressources humaines, incluant le suivi du personnel, des présences, des congés, des missions et la gestion des salaires."
+        },
+        en: {
+          context: "Collaborator at YTech Company",
+          cat: "Management Software",
+          desc: "Comprehensive human resources management software, including staff tracking, attendance, leave management, mission tracking, and salary management."
+        }
       },
       yshop: {
         name: "YShop",
-        context: "Collaborateur chez YTech Company",
-        cat: "Mobile App (Commerce)",
         url: "https://share.google/cNk90YVSOSVPo05FL",
-        desc: "Application de gestion de ventes et de facturation mobile optimisée pour les commerçants.",
-        imgs: ["assets/img/portfolio/yshop.webp", "assets/img/portfolio/yshop2.webp", "assets/img/portfolio/yshop3.webp"]
+        imgs: ["assets/img/portfolio/yshop.webp", "assets/img/portfolio/yshop2.webp", "assets/img/portfolio/yshop3.webp"],
+        fr: {
+          context: "Collaborateur chez YTech Company",
+          cat: "Mobile App (Commerce)",
+          desc: "Application de gestion de ventes et de facturation mobile optimisée pour les commerçants."
+        },
+        en: {
+          context: "Collaborator at YTech Company",
+          cat: "Mobile App (E-commerce)",
+          desc: "Mobile sales and billing management application optimized for merchants."
+        }
       },
       ypay: {
         name: "YPay",
-        context: "Collaborateur chez YTech Company",
-        cat: "Fintech / Paiement",
         url: "https://share.google/Mo4MNQFGGfb9f9jL7",
-        desc: "Solution de paiement mobile sécurisée permettant des transactions rapides et le suivi financier.",
-        imgs: ["assets/img/portfolio/ypay.webp"]
+        imgs: ["assets/img/portfolio/ypay.webp"],
+        fr: {
+          context: "Collaborateur chez YTech Company",
+          cat: "Fintech / Paiement",
+          desc: "API de paiement sécurisée permettant d'effectuer des transactions rapides et de suivre les mouvements financiers."
+        },
+        en: {
+          context: "Collaborator at YTech Company",
+          cat: "Fintech / Payment",
+          desc: "Secure payment API enabling fast transactions and financial tracking."
+        }
       },
       tlo: {
         name: "TLO",
-        context: "Collaborateur chez YTech Company",
-        cat: "Mobile App (Jeux)",
         url: "https://share.google/J4IVoi392OZgcnlMi",
-        desc: "Application ludique de jeux de devinettes interactive.",
-        imgs: ["assets/img/portfolio/tlo1.webp", "assets/img/portfolio/tlo2.webp", "assets/img/portfolio/tlo3.webp"]
+        imgs: ["assets/img/portfolio/tlo1.webp", "assets/img/portfolio/tlo2.webp", "assets/img/portfolio/tlo3.webp"],
+        fr: {
+          context: "Collaborateur chez YTech Company",
+          cat: "Mobile App (Jeux)",
+          desc: "Application ludique de jeux de devinettes interactive."
+        },
+        en: {
+          context: "Collaborator at YTech Company",
+          cat: "Mobile App (Games)",
+          desc: "Interactive and fun guessing game application."
+        }
       }
     };
 
@@ -181,38 +284,40 @@
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get('project');
       const p = projects[id];
+      const lang = localStorage.getItem('preferredLang') || 'fr';
 
-      if (!p) {
-        console.error("Projet non trouvé dans la base de données.");
-        return;
-      }
+      if (!p) return;
 
-      // Remplissage immédiat des textes
+      const content = p[lang] || p['fr'];
+
+      // Textes
       document.getElementById('p-title').innerText = p.name;
       document.getElementById('info-name').innerText = p.name;
-      document.getElementById('info-context').innerText = p.context;
-      document.getElementById('info-cat').innerText = p.cat;
-      document.getElementById('desc-text').innerText = p.desc;
+      document.getElementById('info-context').innerText = content.context;
+      document.getElementById('info-cat').innerText = content.cat;
+      document.getElementById('desc-text').innerText = content.desc;
 
+      // Lien
       const urlLink = document.getElementById('info-url');
       if (p.url === "#") {
-        urlLink.innerText = "Lien privé / Non disponible";
+        urlLink.innerText = (lang === 'fr') ? "Lien privé" : "Private link";
         urlLink.style.color = "gray";
         urlLink.style.pointerEvents = "none";
       } else {
         urlLink.href = p.url;
-        urlLink.innerText = "Consulter le projet";
+        urlLink.innerText = (lang === 'fr') ? "Consulter le projet" : "View Project";
+        urlLink.style.color = "#0563bb";
+        urlLink.style.pointerEvents = "auto";
       }
 
-      // Injection des images
+      // Images (Injection unique)
       const container = document.getElementById('image-container');
-      if (container) {
-          container.innerHTML = p.imgs.map(src => `
+      if (container && container.innerHTML === "") {
+        container.innerHTML = p.imgs.map(src => `
           <div class="swiper-slide">
               <img src="${src}" alt="${p.name}">
           </div>`).join('');
 
-        // Initialisation de Swiper avec un petit délai pour laisser au DOM le temps de respirer
         setTimeout(() => {
           if (typeof Swiper !== 'undefined') {
             new Swiper('.init-swiper', {
@@ -220,39 +325,42 @@
               speed: 600,
               autoplay: { delay: 5000 },
               slidesPerView: 1,
-              pagination: {
-                el: ".swiper-pagination",
-                type: "bullets",
-                clickable: true
-              }
+              pagination: { el: ".swiper-pagination", type: "bullets", clickable: true }
             });
           }
-        }, 100);
+        }, 300);
       }
+
+      // --- LOGIQUE VIDÉO CORRIGÉE ---
       const videoContainer = document.getElementById('video-container');
-if (p.video && videoContainer) {
-    if (p.video.includes('youtube.com') || p.video.includes('youtu.be')) {
-        // Si c'est un lien YouTube
-        videoContainer.innerHTML = `<iframe src="${p.video}" allowfullscreen></iframe>`;
-    } else {
-        // Si c'est un fichier MP4 local
-        videoContainer.innerHTML = `
-            <video controls width="100%" style="border-radius:10px;">
+      const videoSection = document.getElementById('video-section') || videoContainer.parentElement;
+
+      if (p.video) {
+        videoSection.style.display = 'block'; // On force l'affichage de la section
+        if (p.video.includes('youtube.com') || p.video.includes('youtu.be')) {
+          videoContainer.innerHTML = `<iframe src="${p.video}" allowfullscreen></iframe>`;
+        } else {
+          // Vidéo locale MP4
+          videoContainer.innerHTML = `
+            <video controls width="100%" style="border-radius:10px; background:#000;">
                 <source src="${p.video}" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture de vidéos.
+                ${(lang === 'fr') ? 'Votre navigateur ne supporte pas la vidéo.' : 'Your browser does not support the video.'}
             </video>`;
-    }
-} else {
-    videoContainer.parentElement.style.display = 'none'; // Cache la section si pas de vidéo
-}
+        }
+      } else {
+        videoSection.style.display = 'none'; // On cache si pas de vidéo
+      }
     }
 
-    // Exécution : On vérifie si le DOM est déjà prêt, sinon on attend
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-      initProjectDetails();
-    } else {
-      document.addEventListener("DOMContentLoaded", initProjectDetails);
-    }
+    document.addEventListener("DOMContentLoaded", initProjectDetails);
+
+    // Écouteur pour le bouton de langue
+    window.addEventListener('click', function(e) {
+      if (e.target.innerText === 'FR' || e.target.innerText === 'EN') {
+        setTimeout(initProjectDetails, 100);
+      }
+    });
+
   })();
 </script>
 </body>
