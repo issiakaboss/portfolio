@@ -67,3 +67,37 @@
   border-color: #0563bb;
   color: white;
 }
+.col-lg-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* On s'assure que la ligne parente force les colonnes à s'étirer */
+.row.d-flex.align-items-stretch {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.profile-bg-img {
+  width: 100%;
+  height: 100%; 
+  min-height: 300px; 
+  background-image: url('../img/issiaka_home.jpg');
+  background-size: 90%;
+  background-size: cover;     
+  background-position: center bottom; 
+  background-repeat: no-repeat;
+  
+  border-radius: 5px; 
+}
+
+
+/* Ajustement pour mobile : quand les colonnes s'empilent, 
+   on donne une hauteur fixe à l'image */
+@media (max-width: 991px) {
+  .profile-bg-img {
+    height: 400px; 
+    margin-bottom: 20px;
+  }
+}
