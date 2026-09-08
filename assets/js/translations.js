@@ -78,7 +78,8 @@ const translations = {
     'filter_indep': 'Independent Projects',
     'filter_ytech': 'YTech Collaborations',
     'filter_mobile': 'Mobile',
-    'filter_soft': 'Software & Web',
+    'filter_soft': 'Software ',
+    'filter_web': 'Website',
     'proj_indep_label': 'Independent Project',
     'proj_ytech_label': 'YTech Company Team',
 
@@ -198,7 +199,8 @@ const translations = {
     'filter_indep': 'Projets Indépendants',
     'filter_ytech': 'Collaborations YTech',
     'filter_mobile': 'Mobile',
-    'filter_soft': 'Logiciels & Web',
+    'filter_soft': 'Logiciels',
+    'filter_web': 'Sites Web',
     'proj_indep_label': 'Projet Indépendant',
     'proj_ytech_label': 'Équipe YTech Company',
 
