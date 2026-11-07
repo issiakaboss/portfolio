@@ -107,8 +107,10 @@
     card.className = 'project-card reveal is-visible';
     card.dataset.projectId = id;
 
+    const formats = project.formats || [project.category];
     const imageLink = document.createElement('a');
     imageLink.className = 'project-card__image';
+    imageLink.dataset.fit = formats.includes('mobile') ? 'contain' : 'cover';
     imageLink.href = 'portfolio-details.html?project=' + encodeURIComponent(id);
     imageLink.setAttribute('aria-label', content.category + ' — ' + project.name);
 
@@ -122,7 +124,12 @@
     image.addEventListener('error', function () {
       imageLink.hidden = true;
     }, { once: true });
-    imageLink.append(image);
+
+    const badge = document.createElement('span');
+    badge.className = 'project-card__badge';
+    badge.textContent = content.category;
+    imageLink.append(image, badge);
+    card.dataset.format = formats.join(' ');
 
     const body = document.createElement('div');
     body.className = 'project-card__body';
@@ -142,6 +149,17 @@
     const description = document.createElement('p');
     description.textContent = content.description;
 
+    const technologies = document.createElement('div');
+    technologies.className = 'project-card__technologies';
+    technologies.setAttribute('aria-label', getCopy('project_technologies', language));
+    const projectTechnologies = Array.isArray(project.technologies) ? project.technologies : [];
+    (projectTechnologies.length ? projectTechnologies : [getCopy('project_technologies_unknown', language)]).forEach(function (technology) {
+      const tag = document.createElement('span');
+      tag.textContent = technology;
+      if (!projectTechnologies.length) tag.className = 'is-unspecified';
+      technologies.append(tag);
+    });
+
     const footer = document.createElement('div');
     footer.className = 'project-card__footer';
     const category = document.createElement('span');
@@ -158,7 +176,7 @@
     link.append(linkIcon);
 
     footer.append(category, link);
-    body.append(meta, title, description, footer);
+    body.append(meta, title, description, technologies, footer);
     card.append(imageLink, body);
     return card;
   }
@@ -167,6 +185,14 @@
     const grid = document.getElementById('project-grid');
     if (!grid) return;
 
+    const previousPositions = new Map(
+      Array.from(grid.querySelectorAll('.project-card')).map(function (card) {
+        card.getAnimations().forEach(function (animation) {
+          animation.cancel();
+        });
+        return [card.dataset.projectId, card.getBoundingClientRect()];
+      })
+    );
     const language = getLanguage();
     const filterButton = document.querySelector('.project-filters button[aria-pressed="true"]');
     const activeFilter = filterButton ? filterButton.dataset.filter : 'all';
@@ -175,10 +201,40 @@
     });
 
     grid.replaceChildren();
-    entries.forEach(function (entry) {
+    const layoutPattern = ['wide', 'medium', 'medium', 'wide', 'balanced-wide', 'balanced-medium'];
+    const cards = [];
+    entries.forEach(function (entry, index) {
       const card = makeProjectCard(entry[0], entry[1], language);
-      if (card) grid.append(card);
+      if (!card) return;
+      card.dataset.layout = layoutPattern[index % layoutPattern.length];
+      if (entries.length % 2 === 1 && index === entries.length - 1) {
+        card.dataset.singleLast = 'true';
+      }
+      cards.push(card);
     });
+    grid.replaceChildren(...cards);
+
+    if (!reducedMotion) {
+      cards.forEach(function (card) {
+        const previous = previousPositions.get(card.dataset.projectId);
+        const current = card.getBoundingClientRect();
+        if (previous) {
+          const deltaX = previous.left - current.left;
+          const deltaY = previous.top - current.top;
+          if (deltaX || deltaY) {
+            card.animate([
+              { transform: 'translate(' + deltaX + 'px, ' + deltaY + 'px)' },
+              { transform: 'translate(0, 0)' }
+            ], { duration: 260, easing: 'cubic-bezier(0.2, 0.7, 0.2, 1)' });
+          }
+        } else {
+          card.animate([
+            { opacity: 0, transform: 'translateY(8px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ], { duration: 220, easing: 'ease-out' });
+        }
+      });
+    }
 
     const emptyState = document.getElementById('projects-empty');
     if (emptyState) emptyState.hidden = grid.children.length > 0;
