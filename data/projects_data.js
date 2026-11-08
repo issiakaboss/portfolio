@@ -2,6 +2,7 @@ window.portfolioProjects = {
   tiim: {
     name: "Tiim",
     url: "https://fasotiim.com",
+    github: null,
     images: [
       "assets/img/portfolio/tiim.webp",
       "assets/img/portfolio/tiim2.webp",
@@ -10,26 +11,57 @@ window.portfolioProjects = {
       "assets/img/portfolio/tiim5.webp",
       "assets/img/portfolio/tiim6.webp"
     ],
-    video: "assets/vids/tiim_demo.mp4",
+    video: "assets/vids/tiim_client_demo.mp4",
     category: "mobile",
     group: "independent",
     technologies: ["Flutter", "Laravel", "Google Maps API","MySQL","Serveur-vps (LWS)"],
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
     content: {
       fr: {
         context: "Projet indépendant (startup)",
         category: "Application mobile",
-        description: "Application permettant de vérifier en temps réel la disponibilité de produits en pharmacie. Les informations existantes indiquent que le développement était en cours."
+        description: "Application permettant de vérifier en temps réel la disponibilité de produits en pharmacie. La version mvp est deja disponible et est exploitable.",
+        problem: "Il est devenu crucial pour les patients de savoir si un médicament spécifique est disponible dans une pharmacie avant de se déplacer. Les pharmacies peuvent être en rupture de stock, et les patients peuvent perdre du temps et de l'énergie à visiter plusieurs établissements.",
+        solution: "Développer une application mobile qui permet aux patients de vérifier en temps réel la disponibilité des produits dans les pharmacies.",
+        objectives: [ "Faciliter la recherche de produits pharmaceutiques en temps réel", "Réduire le temps passé par les patients dans les pharmacies" ],
+        features: [ "Recherche de produits par nom ou catégorie", "Affichage de la disponibilité en temps réel", "Visualiser les pharmacies les plus proches" ],
+        contributions: [ "Conception de l'interface utilisateur", "Développement de l'application mobile", "Intégration avec les bases de données des pharmacies","Developpement de la logique métier backend avec laravel" ],
+        architecture: " L'application est construite sur Flutter pour le front-end mobile, avec un back-end Laravel qui gère les requêtes et les données. Les informations sur la disponibilité des produits sont stockées dans une base de données MySQL, et l'application utilise l'API Google Maps pour localiser les pharmacies.",
+        challenges: [ "Intégration en temps réel avec les systèmes de gestion des pharmacies", "Assurer la précision des données de disponibilité", "Optimisation des performances pour les recherches rapides" ],
+        results: [ "Amélioration de l'expérience utilisateur pour les patients", "Réduction du temps passé à chercher des produits en pharmacie", "Augmentation de la satisfaction des utilisateurs grâce à la disponibilité en temps réel" ],
+        role: " Développeur principal de l'application mobile, responsable de la conception de l'interface utilisateur et de l'intégration avec le back-end.",
+        team: " L'équipe est composée de développeurs indépendants, d'un designer UX/UI et d'un consultant en pharmacie pour assurer la précision des informations.",
+        status: " Le projet est actuellement en phase de production avec la version mvp, avec des tests en cours pour assurer la fiabilité des données et l'expérience utilisateur."
       },
       en: {
         context: "Independent project (startup)",
         category: "Mobile application",
-        description: "An application for checking product availability at pharmacies in real time. Existing project information indicates that development was in progress."
+        description: "An application for checking product availability at pharmacies in real time. The mvc version is available and usefull.",
+        problem: "It has become crucial for patients to know if a specific medication is available at a pharmacy before making the trip. Pharmacies can run out of stock, and patients may waste time and energy visiting multiple establishments.",
+        solution: "Develop a mobile application that allows patients to check the real-time availability of specific medications at nearby pharmacies.",
+        objectives: [ "Facilitate real-time search for pharmaceutical products", "Reduce the time patients spend searching for products in pharmacies" ],
+        features: [ "Search for products by name or category", "Display real-time availability information", "View nearby pharmacies" ],
+        contributions: [ "User interface design", "Mobile application development", "Integration with pharmacy databases", "Development of backend logic in laravel" ],
+        architecture: "The application is built on Flutter for the mobile front-end, with a Laravel back-end managing requests and data. Product availability information is stored in a MySQL database, and the app uses the Google Maps API for pharmacy location services.",
+        challenges: [ "Intégration en temps réel avec les systèmes de gestion des pharmacies", "Assurer la précision des données de disponibilité", "Optimisation des performances pour les recherches rapides" ],
+        results: [ "Improved user experience for patients", "Reduced time spent searching for products in pharmacies", "Increased user satisfaction through real-time availability information" ],
+        role: "Lead developer of the mobile application, responsible for user interface design and back-end integration.",
+        team: "The team consisted of independent developers, a UX/UI designer, and a pharmacy consultant to ensure the accuracy of information.",
+        status: "The project is currently in production with mvc version, with ongoing testing to ensure data reliability and user experience."
       }
     }
   },
   halal: {
     name: "Union Halal",
     url: "https://union-halal.online/",
+    github: null,
     images: [
       "assets/img/portfolio/union-halal.webp",
       "assets/img/portfolio/union-halal2.webp",
@@ -38,114 +70,274 @@ window.portfolioProjects = {
       "assets/img/portfolio/union-halal5.webp",
       "assets/img/portfolio/union-halal6.webp"
     ],
+    video: null,
     category: "mobile",
     group: "independent",
     technologies: ["Flutter", "Laravel","MySQL","Serveur-vps (LWS)"],
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
     content: {
       fr: {
         context: "Projet client indépendant",
         category: "Application mobile",
-        description: "Application mobile dédiée à la communauté musulmane pour faciliter la recherche d’un conjoint selon des critères définis, dans le but d’aboutir au mariage."
+        description: "Application mobile dédiée à la communauté musulmane pour faciliter la recherche d’un conjoint selon des critères définis, dans le but d’aboutir au mariage.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       },
       en: {
         context: "Independent client project",
         category: "Mobile application",
-        description: "A mobile application for the Muslim community that helps people find a spouse according to defined criteria, with marriage as the goal."
+        description: "A mobile application for the Muslim community that helps people find a spouse according to defined criteria, with marriage as the goal.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       }
     }
   },
   grh: {
     name: "G-RH",
     url: "https://share.google/9aLGs4DqBOk3RS2Oy",
+    github: null,
     images: ["assets/img/portfolio/g-rh.webp"],
+    video: null,
     category: "software",
     group: "ytech",
     technologies: ["Flutter","Laravel", "MySQL"],
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
     content: {
       fr: {
         context: "Collaboration chez YTech Company",
         category: "Logiciel de gestion",
-        description: "Logiciel de gestion des ressources humaines couvrant le suivi du personnel, des présences, des congés, des missions et des salaires."
+        description: "Logiciel de gestion des ressources humaines couvrant le suivi du personnel, des présences, des congés, des missions et des salaires.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       },
       en: {
         context: "YTech Company collaboration",
         category: "Management software",
-        description: "Human resources management software covering staff, attendance, leave, missions, and payroll tracking."
+        description: "Human resources management software covering staff, attendance, leave, missions, and payroll tracking.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       }
     }
   },
   yshop: {
     name: "YShop",
     url: "https://share.google/cNk90YVSOSVPo05FL",
+    github: null,
     images: [
       "assets/img/portfolio/yshop.webp",
       "assets/img/portfolio/yshop2.webp",
       "assets/img/portfolio/yshop3.webp"
     ],
+    video: null,
     category: "mobile",
     group: "ytech",
     technologies:["Flutter","SQLite"],
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
     content: {
       fr: {
         context: "Collaboration chez YTech Company",
         category: "Application mobile — commerce",
-        description: "Application mobile de gestion des ventes et de la facturation destinée aux commerçants."
+        description: "Application mobile de gestion des ventes et de la facturation destinée aux commerçants.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       },
       en: {
         context: "YTech Company collaboration",
         category: "Mobile application — commerce",
-        description: "A mobile sales and invoicing management application for merchants."
+        description: "A mobile sales and invoicing management application for merchants.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       }
     }
   },
   ypay: {
     name: "YPay",
     url: "https://share.google/Mo4MNQFGGfb9f9jL7",
+    github: null,
+    video: null,
     images: ["assets/img/portfolio/ypay.webp"],
     category: "mobile",
     formats: ["mobile", "webapp"],
     group: "ytech",
     technologies: ["Flutter","Laravel", "MySQL","Serveur-vps (LWS)"],
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
     content: {
       fr: {
         context: "Collaboration chez YTech Company",
         category: "Paiement",
-        description: "Solution de paiement décrite dans les informations existantes comme une API permettant d’effectuer des transactions et de suivre les mouvements financiers."
+        description: "Solution de paiement décrite dans les informations existantes comme une API permettant d’effectuer des transactions et de suivre les mouvements financiers.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       },
       en: {
         context: "YTech Company collaboration",
         category: "Payments",
-        description: "A payment solution described in the existing information as an API for transactions and financial activity tracking."
+        description: "A payment solution described in the existing information as an API for transactions and financial activity tracking.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       }
     }
   },
   tlo: {
     name: "TLO",
     url: "https://share.google/J4IVoi392OZgcnlMi",
+    github: null,
     images: [
       "assets/img/portfolio/tlo1.webp",
       "assets/img/portfolio/tlo2.webp",
       "assets/img/portfolio/tlo3.webp"
     ],
+    video: null,
     category: "mobile",
     group: "ytech",
     technologies: ["Flutter","Laravel", "MySQL","Serveur-vps (LWS)"],
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
     content: {
       fr: {
         context: "Collaboration chez YTech Company",
         category: "Application mobile — jeu",
-        description: "Application ludique proposant des jeux de devinettes interactifs."
+        description: "Application ludique proposant des jeux de devinettes interactifs.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       },
       en: {
         context: "YTech Company collaboration",
         category: "Mobile application — game",
-        description: "A playful application featuring interactive guessing games."
+        description: "A playful application featuring interactive guessing games.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       }
     }
   },
   autogroup: {
     name: "405 Auto Group",
     url: "https://405autogroup.com/",
+    github: null,
     images: [
       "assets/img/portfolio/autogroup1.webp",
       "assets/img/portfolio/autogroup2.webp",
@@ -157,22 +349,53 @@ window.portfolioProjects = {
     category: "website",
     group: "independent",
     technologies: ["Astro","Hebergeur - hostinger"],
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
     content: {
       fr: {
         context: "Projet client indépendant",
         category: "Site web — automobile",
-        description: "Site d’une entreprise spécialisée dans la vente et l’exportation de véhicules. La présentation existante met en avant la recherche de véhicules auprès d’un réseau de concessionnaires et de ventes aux enchères."
+        description: "Site d’une entreprise spécialisée dans la vente et l’exportation de véhicules. La présentation existante met en avant la recherche de véhicules auprès d’un réseau de concessionnaires et de ventes aux enchères.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       },
       en: {
         context: "Independent client project",
         category: "Website — automotive",
-        description: "Website for a company specializing in vehicle sales and exports. The existing project description highlights vehicle sourcing through a network of dealers and auctions."
+        description: "Website for a company specializing in vehicle sales and exports. The existing project description highlights vehicle sourcing through a network of dealers and auctions.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       }
     }
   },
   yamlogistics: {
     name: "Yam Logistics",
     url: "https://yamlogistic.com/",
+    github: null,
     images: [
       "assets/img/portfolio/yamlogistics1.webp",
       "assets/img/portfolio/yamlogistics2.webp",
@@ -183,27 +406,103 @@ window.portfolioProjects = {
     category: "website",
     group: "independent",
     technologies: ["Astro","Hebergeur - hostinger"],
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
     content: {
       fr: {
         context: "Projet client indépendant",
         category: "Site web — logistique",
-        description: "Site de présentation d’une entreprise de logistique et de transport, axé sur ses services, la fiabilité du transport et la sécurité des marchandises."
+        description: "Site de présentation d’une entreprise de logistique et de transport, axé sur ses services, la fiabilité du transport et la sécurité des marchandises.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       },
       en: {
         context: "Independent client project",
         category: "Website — logistics",
-        description: "Website for a logistics and transportation company, presenting its services and focus on reliable transport and cargo safety."
+        description: "Website for a logistics and transportation company, presenting its services and focus on reliable transport and cargo safety.",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
       }
     }
   },
   ghotel: {
     name: "G-Hotel",
+    url: "",
+    github: null,
     category: "Logiciel de Gestion",
     client: "Entreprise X",
     date: "2023",
     description: "Logiciel complet de gestion de réservations et de chambres...",
     images: ["assets/img/ghotel1.jpg"],
     technologies: ["Flutter","Laravel", "MySQL","Serveur- vps"],
+    video: null,
+    group: "",
+    status: "",
+    role: "",
+    team: "",
+    features: [],
+    contributions: [],
+    architecture: "",
+    challenges: [],
+    results: [],
+    content: {
+      fr: {
+        context: "Entreprise X",
+        category: "Logiciel de Gestion",
+        description: "Logiciel complet de gestion de réservations et de chambres...",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
+      },
+      en: {
+        context: "Entreprise X",
+        category: "Hotel management software",
+        description: "Complete room and reservation management software...",
+        problem: "",
+        solution: "",
+        objectives: [],
+        features: [],
+        contributions: [],
+        architecture: "",
+        challenges: [],
+        results: [],
+        role: "",
+        team: "",
+        status: ""
+      }
+    },
     publishable: false
   }
 };

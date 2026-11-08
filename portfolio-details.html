@@ -30,7 +30,7 @@
       <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-navigation">
         <i class="bi bi-list" aria-hidden="true"></i>
       </button>
-      <nav class="primary-nav" id="primary-navigation" aria-label="Navigation principale">
+      <nav class="primary-nav" id="primary-navigation" aria-label="Navigation principale" data-aria-key="nav_primary_label">
         <a href="index.html#home" data-key="nav_home">Accueil</a>
         <a href="index.html#about" data-key="nav_about">À propos</a>
         <a href="index.html#skills" data-key="nav_skills">Compétences</a>
@@ -40,7 +40,7 @@
         <a href="index.html#contact" data-key="nav_contact">Contact</a>
       </nav>
       <div class="header-actions">
-        <div class="language-switch" role="group" aria-label="Langue">
+        <div class="language-switch" role="group" aria-label="Langue" data-aria-key="language_label">
           <button type="button" data-language="fr" aria-pressed="true">FR</button>
           <button type="button" data-language="en" aria-pressed="false">EN</button>
         </div>
@@ -57,7 +57,7 @@
       <p id="project-context" class="details-hero__context"></p>
     </section>
 
-    <section class="details-content section-shell" aria-label="Informations sur le projet">
+    <section class="details-content section-shell" aria-label="Informations sur le projet" data-aria-key="details_information_label">
       <div id="project-not-found" class="project-not-found" role="status" hidden>
         <i class="bi bi-info-circle" aria-hidden="true"></i>
         <p data-key="details_missing">Ce projet n’est pas disponible ou ses informations doivent être complétées.</p>
@@ -65,45 +65,51 @@
       </div>
       <div id="project-details" class="details-layout" hidden>
         <div class="details-main">
-          <div class="gallery-heading">
-            <div><p class="eyebrow">01 <span>/</span> <span data-key="details_gallery">Aperçus du projet</span></p></div>
+          <div class="gallery-heading" id="gallery-heading">
+            <div><p class="eyebrow">01 <span>/</span> <span data-key="details_gallery">Galerie du projet</span></p></div>
             <div class="gallery-controls" id="gallery-controls" hidden>
-              <button type="button" id="gallery-prev" aria-label="Image précédente"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
+              <button type="button" id="gallery-prev"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
               <span id="gallery-count" aria-live="polite"></span>
-              <button type="button" id="gallery-next" aria-label="Image suivante"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+              <button type="button" id="gallery-next"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
             </div>
           </div>
-          <div class="project-gallery" id="project-gallery"></div>
-          <section class="detail-block">
-            <p class="eyebrow">02 <span>/</span> <span data-key="details_overview">Présentation</span></p>
-            <p id="project-description" class="detail-block__lead"></p>
-          </section>
-          <section class="detail-block">
-            <p class="eyebrow">03 <span>/</span> <span data-key="details_contribution">Contribution</span></p>
-            <p id="project-contribution" data-key="details_contribution_note">Le détail de ma contribution personnelle reste à préciser.</p>
-          </section>
-          <section class="detail-block">
-            <p class="eyebrow">04 <span>/</span> <span data-key="details_technologies">Technologies</span></p>
-            <p data-key="tech_unlisted">Les technologies propres à ce projet ne sont pas précisées dans les informations disponibles.</p>
-          </section>
+          <div class="project-gallery" id="project-gallery" hidden>
+            <button type="button" class="gallery-stage" id="gallery-stage">
+              <img id="gallery-image" alt="">
+              <span class="gallery-stage__zoom"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i><span data-key="gallery_open">Agrandir l’image</span></span>
+            </button>
+            <div class="gallery-thumbnails" id="gallery-thumbnails" role="group" aria-label="Choisir une image" data-aria-key="gallery_thumbnails_label" hidden></div>
+          </div>
+          <div id="project-sections"></div>
         </div>
         <aside class="details-aside">
           <div class="details-info-card">
             <p class="eyebrow"><span data-key="details_overview">Présentation</span></p>
             <h2 id="project-name"></h2>
             <dl>
-              <div><dt data-key="details_context">Contexte</dt><dd id="project-context-info"></dd></div>
-              <div><dt data-key="details_category">Catégorie</dt><dd id="project-category"></dd></div>
+              <div id="project-context-row"><dt data-key="details_context">Contexte</dt><dd id="project-context-info"></dd></div>
+              <div id="project-category-row"><dt data-key="details_category">Catégorie</dt><dd id="project-category"></dd></div>
+              <div id="project-status-row" hidden><dt data-key="details_status">Statut</dt><dd id="project-status"></dd></div>
             </dl>
             <a class="button button--primary details-visit" id="project-link" href="#" target="_blank" rel="noopener noreferrer" hidden><span data-key="details_visit">Visiter le projet</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            <a class="button button--outline details-visit" id="project-github-link" href="#" target="_blank" rel="noopener noreferrer" hidden><span data-key="details_github">Voir le code source</span><i class="bi bi-github" aria-hidden="true"></i></a>
           </div>
-          <section class="video-card" id="video-section">
+          <section class="video-card" id="video-section" hidden>
             <p class="eyebrow" data-key="details_demo">Démonstration vidéo</p>
             <div id="project-video"></div>
-            <p class="video-empty" id="video-empty" data-key="no_video">Aucune démonstration vidéo disponible.</p>
           </section>
         </aside>
       </div>
+      <dialog class="project-lightbox" id="project-lightbox" aria-labelledby="lightbox-title">
+        <div class="lightbox-toolbar">
+          <span class="visually-hidden" id="lightbox-title" data-key="gallery_lightbox_title">Image agrandie</span>
+          <span id="lightbox-count" aria-live="polite"></span>
+          <button type="button" id="lightbox-close"><i class="bi bi-x-lg" aria-hidden="true"></i><span data-key="gallery_close">Fermer</span></button>
+        </div>
+        <button type="button" class="lightbox-nav lightbox-nav--prev" id="lightbox-prev"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden" data-key="gallery_previous">Image précédente</span></button>
+        <img id="lightbox-image" alt="">
+        <button type="button" class="lightbox-nav lightbox-nav--next" id="lightbox-next"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden" data-key="gallery_next">Image suivante</span></button>
+      </dialog>
     </section>
   </main>
 
@@ -112,10 +118,10 @@
       <a class="brand" href="index.html#home"><span class="brand__mark">&lt;/&gt;</span><span>ISSIAKA<span class="brand__accent">.DEV</span></span></a>
       <p data-key="footer_tagline">Je transforme des besoins concrets en solutions numériques.</p>
     </div>
-    <nav class="site-footer__nav" aria-label="Navigation de pied de page">
+    <nav class="site-footer__nav" aria-label="Navigation de pied de page" data-aria-key="footer_nav_label">
       <a href="index.html#about" data-key="nav_about">À propos</a><a href="index.html#skills" data-key="nav_skills">Compétences</a><a href="index.html#services" data-key="nav_services">Services</a><a href="index.html#experience" data-key="nav_experience">Expériences</a><a href="index.html#projects" data-key="nav_projects">Projets</a><a href="index.html#contact" data-key="nav_contact">Contact</a>
     </nav>
-    <div class="site-footer__socials" aria-label="Réseaux sociaux">
+    <div class="site-footer__socials" aria-label="Réseaux sociaux" data-aria-key="social_links_label">
       <a href="https://github.com/issiakaboss" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
       <a href="https://www.linkedin.com/in/issiaka-ouedraogo-1a6872306?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
       <a href="https://www.facebook.com/share/1AarNiaGvP/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
