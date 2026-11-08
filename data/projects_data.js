@@ -13,6 +13,7 @@ window.portfolioProjects = {
     video: "assets/vids/tiim_demo.mp4",
     category: "mobile",
     group: "independent",
+    technologies: ["Flutter", "Laravel", "Google Maps API","MySQL","Serveur-vps (LWS)"],
     content: {
       fr: {
         context: "Projet indépendant (startup)",
@@ -39,6 +40,7 @@ window.portfolioProjects = {
     ],
     category: "mobile",
     group: "independent",
+    technologies: ["Flutter", "Laravel","MySQL","Serveur-vps (LWS)"],
     content: {
       fr: {
         context: "Projet client indépendant",
@@ -58,6 +60,7 @@ window.portfolioProjects = {
     images: ["assets/img/portfolio/g-rh.webp"],
     category: "software",
     group: "ytech",
+    technologies: ["Flutter","Laravel", "MySQL"],
     content: {
       fr: {
         context: "Collaboration chez YTech Company",
@@ -81,6 +84,7 @@ window.portfolioProjects = {
     ],
     category: "mobile",
     group: "ytech",
+    technologies:["Flutter","SQLite"],
     content: {
       fr: {
         context: "Collaboration chez YTech Company",
@@ -101,6 +105,7 @@ window.portfolioProjects = {
     category: "mobile",
     formats: ["mobile", "webapp"],
     group: "ytech",
+    technologies: ["Flutter","Laravel", "MySQL","Serveur-vps (LWS)"],
     content: {
       fr: {
         context: "Collaboration chez YTech Company",
@@ -124,6 +129,7 @@ window.portfolioProjects = {
     ],
     category: "mobile",
     group: "ytech",
+    technologies: ["Flutter","Laravel", "MySQL","Serveur-vps (LWS)"],
     content: {
       fr: {
         context: "Collaboration chez YTech Company",
@@ -150,6 +156,7 @@ window.portfolioProjects = {
     video: "assets/vids/autogroup.webm",
     category: "website",
     group: "independent",
+    technologies: ["Astro","Hebergeur - hostinger"],
     content: {
       fr: {
         context: "Projet client indépendant",
@@ -175,6 +182,7 @@ window.portfolioProjects = {
     video: "assets/vids/yamlogistics.webm",
     category: "website",
     group: "independent",
+    technologies: ["Astro","Hebergeur - hostinger"],
     content: {
       fr: {
         context: "Projet client indépendant",
@@ -195,6 +203,7 @@ window.portfolioProjects = {
     date: "2023",
     description: "Logiciel complet de gestion de réservations et de chambres...",
     images: ["assets/img/ghotel1.jpg"],
+    technologies: ["Flutter","Laravel", "MySQL","Serveur- vps"],
     publishable: false
   }
 };
