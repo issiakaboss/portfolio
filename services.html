@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Découvrez les services de développement full-stack, d’accompagnement UI/UX et de formation proposés par Issiaka Ouédraogo.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services — Issiaka Ouédraogo">
+  <meta property="og:description" content="Développement d’applications, accompagnement UI/UX et formation en programmation.">
+  <title>Services — Issiaka Ouédraogo</title>
+  <link rel="icon" href="assets/img/issiaka_logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/portfolio-redesign.css">
+</head>
+<body class="services-page">
+  <a class="skip-link" href="#main-content" data-key="skip_content">Aller au contenu</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html#home" aria-label="Issiaka.dev — accueil">
+        <span class="brand__mark">&lt;/&gt;</span><span>ISSIAKA<span class="brand__accent">.DEV</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-navigation">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Navigation principale" data-aria-key="nav_primary_label">
+        <a href="index.html#home" data-key="nav_home">Accueil</a>
+        <a href="index.html#about" data-key="nav_about">À propos</a>
+        <a href="index.html#skills" data-key="nav_skills">Compétences</a>
+        <a href="index.html#services" data-key="nav_services">Services</a>
+        <a href="index.html#experience" data-key="nav_experience">Expériences</a>
+        <a href="index.html#projects" data-key="nav_projects">Projets</a>
+        <a href="index.html#contact" data-key="nav_contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="Langue" data-aria-key="language_label">
+          <button type="button" data-language="fr" aria-pressed="true">FR</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="button button--small button--outline" href="index.html#experience" data-key="nav_resume">Mon parcours</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="services-hero section-shell">
+      <a class="text-link details-back" href="index.html#services"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-key="services_back">Retour aux services</span></a>
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-key="services_page_eyebrow">MES SERVICES</span></p>
+      <h1 data-key="services_page_title">Des solutions numériques pensées pour vos besoins.</h1>
+      <p class="services-hero__intro" data-key="services_page_intro">Du développement au partage de compétences, je vous accompagne pour transformer vos idées en solutions utiles et concrètes.</p>
+      <a class="button button--primary" href="index.html#contact"><span data-key="services_contact">Parlons de votre projet</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+    </section>
+
+    <section class="service-detail section-shell" id="fullstack" aria-labelledby="fullstack-title">
+      <div class="service-detail__heading">
+        <span class="service-detail__number">01</span>
+        <div>
+          <p class="eyebrow" data-key="service_fullstack">Développement full-stack</p>
+          <h2 id="fullstack-title" data-key="fullstack_detail_title">Développement d’applications web et mobiles.</h2>
+          <p data-key="fullstack_detail_intro">Conception et développement de solutions numériques complètes, de l’interface utilisateur au backend.</p>
+        </div>
+      </div>
+      <div class="service-modules">
+        <article class="service-module">
+          <i class="bi bi-phone" aria-hidden="true"></i>
+          <h3 data-key="module_mobile_title">Développement mobile</h3>
+          <p data-key="module_mobile_desc">Des applications mobiles conçues avec Flutter, de l’interface à la connexion aux services.</p>
+          <ul><li data-key="mobile_item_1">Applications Android et iOS</li><li data-key="mobile_item_2">Flutter et Dart</li><li data-key="mobile_item_3">Gestion des états avec GetX</li><li data-key="mobile_item_4">Intégration d’API</li><li data-key="mobile_item_5">Interfaces adaptatives et expérience utilisateur</li></ul>
+          <div class="service-tags"><span>Flutter</span><span>Dart</span><span>GetX</span></div>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-hdd-stack" aria-hidden="true"></i>
+          <h3 data-key="module_backend_title">Développement backend</h3>
+          <p data-key="module_backend_desc">Des API et services backend alignés sur les règles métier et les besoins des applications.</p>
+          <ul><li data-key="backend_item_1">Développement d’API REST</li><li data-key="backend_item_2">Laravel et PHP</li><li data-key="backend_item_3">Authentification et gestion des utilisateurs</li><li data-key="backend_item_4">Gestion des bases de données</li><li data-key="backend_item_5">Logique métier et intégration des services</li></ul>
+          <div class="service-tags"><span>Laravel</span><span>PHP</span><span>API REST</span></div>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-window" aria-hidden="true"></i>
+          <h3 data-key="module_frontend_title">Développement frontend</h3>
+          <p data-key="module_frontend_desc">Des interfaces web lisibles et adaptées aux usages de votre produit.</p>
+          <ul><li data-key="frontend_item_1">HTML, CSS et JavaScript</li><li data-key="frontend_item_2">Conception d’interfaces web</li><li data-key="frontend_item_3">Angular selon les besoins du projet</li></ul>
+          <div class="service-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Angular</span></div>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+          <h3 data-key="module_automation_title">Automatisation et intégration</h3>
+          <p data-key="module_automation_desc">Des intégrations qui réduisent les tâches répétitives et facilitent les échanges entre services.</p>
+          <ul><li data-key="automation_item_1">Automatisation de tâches répétitives</li><li data-key="automation_item_2">Intégration de services et d’API</li><li data-key="automation_item_3">Optimisation de processus métier</li></ul>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-cloud-arrow-up" aria-hidden="true"></i>
+          <h3 data-key="module_deploy_title">Déploiement et mise en production</h3>
+          <p data-key="module_deploy_desc">Une mise en ligne accompagnée de la configuration et de la maintenance technique.</p>
+          <ul><li data-key="deploy_item_1">Configuration de serveurs VPS</li><li data-key="deploy_item_2">Linux et Nginx</li><li data-key="deploy_item_3">Mise en ligne et configuration des applications</li><li data-key="deploy_item_4">Maintenance technique</li></ul>
+          <div class="service-tags"><span>Linux</span><span>VPS</span><span>Nginx</span></div>
+        </article>
+      </div>
+      <a class="button button--outline service-detail__cta" href="index.html#contact"><span data-key="services_discuss">Discutons de votre projet</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+    </section>
+
+    <section class="service-detail section-shell" id="uiux" aria-labelledby="uiux-title">
+      <div class="service-detail__heading">
+        <span class="service-detail__number">02</span>
+        <div>
+          <p class="eyebrow" data-key="service_design">Accompagnement UI/UX</p>
+          <h2 id="uiux-title" data-key="uiux_detail_title">Conception d’interfaces et expérience utilisateur.</h2>
+          <p data-key="uiux_detail_intro">Un accompagnement pour améliorer la clarté, l’accessibilité et l’expérience d’utilisation de vos produits numériques.</p>
+        </div>
+      </div>
+      <div class="service-modules">
+        <article class="service-module">
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <h3 data-key="module_needs_title">Analyse des besoins</h3>
+          <p data-key="module_needs_desc">Clarifier le contexte du produit avant de définir les interfaces et les parcours.</p>
+          <ul><li data-key="needs_item_1">Compréhension du besoin métier</li><li data-key="needs_item_2">Identification des utilisateurs cibles</li><li data-key="needs_item_3">Définition des fonctionnalités</li></ul>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-vector-pen" aria-hidden="true"></i>
+          <h3 data-key="module_ui_title">Conception UI/UX</h3>
+          <p data-key="module_ui_desc">Organiser les contenus et imaginer des parcours et interfaces faciles à comprendre.</p>
+          <ul><li data-key="ui_item_1">Organisation des interfaces</li><li data-key="ui_item_2">Création de parcours utilisateurs</li><li data-key="ui_item_3">Interfaces modernes et intuitives</li></ul>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-bezier2" aria-hidden="true"></i>
+          <h3 data-key="module_prototype_title">Prototypage</h3>
+          <p data-key="module_prototype_desc">Visualiser et parcourir une idée d’interface avant son développement.</p>
+          <ul><li data-key="prototype_item_1">Maquettes</li><li data-key="prototype_item_2">Prototypes interactifs</li><li data-key="prototype_item_3">Figma</li></ul>
+          <div class="service-tags"><span>Figma</span></div>
+        </article>
+      </div>
+      <a class="button button--outline service-detail__cta" href="index.html#contact"><span data-key="services_discuss">Discutons de votre projet</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+    </section>
+
+    <section class="service-detail section-shell" id="formation" aria-labelledby="formation-title">
+      <div class="service-detail__heading">
+        <span class="service-detail__number">03</span>
+        <div>
+          <p class="eyebrow" data-key="service_training">Formation en programmation</p>
+          <h2 id="formation-title" data-key="training_detail_title">Formation et accompagnement technique.</h2>
+          <p data-key="training_detail_intro">Un apprentissage progressif orienté vers la pratique, les fondamentaux et la réalisation de petits projets.</p>
+        </div>
+      </div>
+      <div class="service-modules">
+        <article class="service-module">
+          <i class="bi bi-phone" aria-hidden="true"></i>
+          <h3 data-key="training_mobile_title">Développement mobile</h3>
+          <p data-key="training_mobile_desc">Découvrir la création d’applications mobiles avec Flutter et Dart.</p>
+          <ul><li data-key="training_mobile_item_1">Initiation à Flutter et Dart</li><li data-key="training_mobile_item_2">Création d’interfaces</li><li data-key="training_mobile_item_3">Connexion à des API</li></ul>
+          <div class="service-tags"><span>Flutter</span><span>Dart</span></div>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-hdd-stack" aria-hidden="true"></i>
+          <h3 data-key="training_backend_title">Développement backend</h3>
+          <p data-key="training_backend_desc">Aborder les bases du backend, des API et du stockage de données.</p>
+          <ul><li data-key="training_backend_item_1">Initiation à PHP et Laravel</li><li data-key="training_backend_item_2">Création d’API REST</li><li data-key="training_backend_item_3">Bases de données</li></ul>
+          <div class="service-tags"><span>PHP</span><span>Laravel</span><span>API REST</span></div>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-code-slash" aria-hidden="true"></i>
+          <h3 data-key="training_web_title">Développement web</h3>
+          <p data-key="training_web_desc">Apprendre les langages et les principes essentiels du frontend web.</p>
+          <ul><li data-key="training_web_item_1">HTML, CSS et JavaScript</li><li data-key="training_web_item_2">Fondamentaux du développement frontend</li></ul>
+          <div class="service-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </article>
+        <article class="service-module">
+          <i class="bi bi-lightbulb" aria-hidden="true"></i>
+          <h3 data-key="module_practice_title">Accompagnement pratique</h3>
+          <p data-key="module_practice_desc">Mettre en pratique les notions apprises et progresser étape par étape.</p>
+          <ul><li data-key="practice_item_1">Exercices pratiques</li><li data-key="practice_item_2">Réalisation de petits projets</li><li data-key="practice_item_3">Bonnes pratiques de développement</li><li data-key="practice_item_4">Accompagnement dans la progression</li></ul>
+        </article>
+      </div>
+      <a class="button button--outline service-detail__cta" href="index.html#contact"><span data-key="services_discuss">Discutons de votre projet</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+    </section>
+
+    <section class="services-final-cta section-shell">
+      <div>
+        <p class="eyebrow" data-key="contact_eyebrow">CONTACT</p>
+        <h2 data-key="services_final_title">Vous avez un projet en tête ?</h2>
+        <p data-key="services_final_intro">Parlons de vos besoins et voyons comment donner vie à votre idée.</p>
+      </div>
+      <a class="button button--primary" href="index.html#contact"><span data-key="services_contact">Parlons de votre projet</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__identity">
+      <a class="brand" href="index.html#home"><span class="brand__mark">&lt;/&gt;</span><span>ISSIAKA<span class="brand__accent">.DEV</span></span></a>
+      <p data-key="footer_tagline">Je transforme des besoins concrets en solutions numériques.</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="Navigation de pied de page" data-aria-key="footer_nav_label">
+      <a href="index.html#about" data-key="nav_about">À propos</a><a href="index.html#skills" data-key="nav_skills">Compétences</a><a href="index.html#services" data-key="nav_services">Services</a><a href="index.html#experience" data-key="nav_experience">Expériences</a><a href="index.html#projects" data-key="nav_projects">Projets</a><a href="index.html#contact" data-key="nav_contact">Contact</a>
+    </nav>
+    <div class="site-footer__socials" aria-label="Réseaux sociaux" data-aria-key="social_links_label">
+      <a href="https://github.com/issiakaboss" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/issiaka-ouedraogo-1a6872306?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/share/1AarNiaGvP/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+      <a href="https://wa.me/75572006" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+    </div>
+    <p class="site-footer__copyright">© <span id="current-year"></span> Issiaka Ouédraogo. <span data-key="footer_rights">Tous droits réservés.</span></p>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+</body>
+</html>
